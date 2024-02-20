@@ -1,0 +1,17 @@
+# Docker镜像打包, 忽略文件规则
+.svn
+.git
+.idea
+.swp
+.idea
+.settings
+.vscode
+
+.*
+*.MD
+*.md
+
+log/
+pkg/
+document/
+go.sum

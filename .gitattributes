@@ -1,0 +1,9 @@
+* linguist-language=GO
+*.mod text eol=lf
+*.go text eol=lf
+*.sh text eol=lf
+*.sql text eol=lf
+*.md text eol=lf
+*.MD text eol=lf
+*.toml text eol=lf
+*.conf text eol=lf

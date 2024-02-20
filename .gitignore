@@ -19,3 +19,30 @@
 
 # Go workspace file
 go.work
+
+
+# Other file
+.buildpath
+.hgignore.swp
+.project
+.orig
+.swp
+.idea/
+.settings/
+.vscode/
+
+vender/
+log/
+public/
+composer.lock
+gitpush.sh
+pkg/
+bin/
+cbuild
+*/.DS_Store
+main
+gf-empty
+go.sum
+mpuaps.exe
+config/config.toml
+config/config-local.toml
