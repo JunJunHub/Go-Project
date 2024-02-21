@@ -1,0 +1,30 @@
+{
+    "ErrMpusrvCascadeUnknown": "未知错误",
+    "ErrMpusrvCascadeInvalidCascadeId": "无效的级联ID",
+    "ErrMpusrvCascadeDelDefaultCascadePlatForbid": "禁止删除本级级联信息",
+    "ErrMpusrvCascadeDelInuseCascadePlatForbid": "级联平台资源使用中,禁止删除",
+    "ErrMpusrvCascadeGetDefaultCascadePlatFailed": "查询本级级联信息失败",
+    "ErrMpusrvCascadeDefaultCascadeIdResetting": "本级级联ID更新,资源同步中,请稍后",
+    "ErrMpusrvCascadeGenCascadeIdErr": "本级级联信息错误",
+    "ErrMpusrvCascadeCheckCascadeIdDuplicateWithOtherCascadePlat": "级联ID与其他平台重复",
+    "ErrMpusrvCascadeOffline": "级联平台不在线",
+    "ErrMpusrvCascadeAddLowerCascadePlatFailed": "添加级联平台失败",
+    "ErrMpusrvCascadeGetLowerCascadePlatIdFailed": "获取级联台级联ID失败",
+    "ErrMpusrvCascadeCheckCascadeIdDuplicateErr": "校验级联ID是否重复失败",
+    "ErrMpusrvCascadeRestCascadeIdFailedCascadeRelationEstablished": "已与其他平台建立级联关系,禁止修改级联ID",
+
+    "ErrMpusrvCascadePushChnSuccess": "成功",
+    "ErrMpusrvCascadePushChnFailed": "推送失败",
+    "ErrMpusrvCascadeRecvPushChnFailed": "接收上级推送信号源失败",
+    "ErrMpusrvCascadePushChnDuplicate": "重复推送",
+    "ErrMpusrvCascadePushSubordinateChnToSubordinate": "不能将下级的信号源推给下级本身",
+    "ErrMpusrvCascadePushAnalogChnNotAssociationChn": "不可推送未关联网络信号源的模拟信号",
+    "ErrMpusrvCascadePushChnContainsUnsupportedChn": "包含不支持推送的通道",
+    "ErrMpusrvCascadeCheckCascadePlatIpDuplicate": "级联平台IP重复",
+    "ErrMpusrvCascadePushToDirectSubordinatePlatOnly": "只能向直属下级推送信号源",
+    "ErrMpusrvCascadePushChannelMaxLimit": "向下级推送点位个数达到上限",
+    "ErrMpusrvCascadePushChnNotFind": "点位未推送不可撤销",
+
+    "ErrMpusrvCascadeGetAssociationChnFailed": "级联获取关联网络信号源失败",
+    "ErrMpusrvCascadeAnalogChnNotAssociationChn": "模拟信号未关联网络信号源"
+}

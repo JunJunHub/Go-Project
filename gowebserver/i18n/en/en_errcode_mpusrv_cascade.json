@@ -1,0 +1,30 @@
+{
+    "ErrMpusrvCascadeUnknown": "error unknown",
+    "ErrMpusrvCascadeInvalidCascadeId": "invalid cascade ID",
+    "ErrMpusrvCascadeDelDefaultCascadePlatForbid": "deletion of this level of cascade information forbidden",
+    "ErrMpusrvCascadeDelInuseCascadePlatForbid": "deletion of this level of cascade information forbidden",
+    "ErrMpusrvCascadeGetDefaultCascadePlatFailed": "failed to query this level of cascade information",
+    "ErrMpusrvCascadeDefaultCascadeIdResetting": "this level cascade ID update, resource synchronization in progress, please wait",
+    "ErrMpusrvCascadeGenCascadeIdErr": "error in this level cascade information",
+    "ErrMpusrvCascadeCheckCascadeIdDuplicateWithOtherCascadePlat": "cascade IDs are duplicated with other platforms",
+    "ErrMpusrvCascadeOffline": "cascade platform is not online",
+    "ErrMpusrvCascadeAddLowerCascadePlatFailed": "add lower cascade platform failed",
+    "ErrMpusrvCascadeGetLowerCascadePlatIdFailed": "get lower cascade platform ID failed",
+    "ErrMpusrvCascadeCheckCascadeIdDuplicateErr": "check cascade ID duplicate error",
+    "ErrMpusrvCascadeRestCascadeIdFailedCascadeRelationEstablished": "cascade relationship has been established with other platforms, prohibit to modify the cascade ID",
+
+    "ErrMpusrvCascadePushChnSuccess": "success",
+    "ErrMpusrvCascadePushChnFailed": "push failed",
+    "ErrMpusrvCascadeRecvPushChnFailed": "cascade receive push channel failed",
+    "ErrMpusrvCascadePushChnDuplicate":"Repeated Pushing",
+    "ErrMpusrvCascadePushSubordinateChnToSubordinate":"You cannot push the signal source of a level to the level itself.",
+    "ErrMpusrvCascadePushAnalogChnNotAssociationChn":"Analog signal that is not associated with a network signal source cannot be pushed.",
+    "ErrMpusrvCascadePushChnContainsUnsupportedChn":"Channels that do not support pushing are included. Please try again.",
+    "ErrMpusrvCascadeCheckCascadePlatIpDuplicate":"Cascading Platform IP Address Already Exists",
+    "ErrMpusrvCascadePushToDirectSubordinatePlatOnly":"You can only push signal sources to direct subordinates.",
+    "ErrMpusrvCascadePushChannelMaxLimit":"No more points can be pushed to subordinates.",
+    "ErrMpusrvCascadePushChnNotFind":"The point is not pushed yet.",
+
+    "ErrMpusrvCascadeGetAssociationChnFailed": "cascade to get the associated network signal source failed",
+    "ErrMpusrvCascadeAnalogChnNotAssociationChn": "analog signal not associated with a network source"
+}

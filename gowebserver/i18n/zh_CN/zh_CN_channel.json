@@ -1,0 +1,9 @@
+{
+    "EChannelOffline": "信号源丢失|信号输出异常",
+    "EChannelOnline": "正常",
+    "EChannelDel": "信号源离线(板卡设备离线)|信号输出异常(板卡设备离线)",
+    "EChannelTakeBack": "上级推送点位收回",
+    "EChannelUnusable": "级联通道不可用",
+    "EChannelUnUse": "端口物理连接异常",
+    "EChannelStateUnknow": "未知状态"
+}

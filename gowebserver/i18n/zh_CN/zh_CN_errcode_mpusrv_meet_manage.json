@@ -1,0 +1,28 @@
+{
+    "ErrMpuMeetPlatformNotExist":"会议平台不存在",
+    "ErrMpuMeetPlatformAliasDuplicate":"会议平台名称重复",
+    "ErrMpuMeetPlatformIPDuplicate":"会议平台IP重复",
+    "ErrMpuMeetPlatformInuseDelForbid":"不可删除正在使用的会议平台",
+    "ErrMpuMeetPlatformUserInuseDelForbid":"不可删除正在使用的会议平台账户",
+    "ErrMpuMeetPlatformUserInuseUpdateForbid": "不可修改正在使用的会议平台账户",
+    "ErrMpuMeetPlatformUsernameDuplicate":"会议平台用户名重复",
+    "ErrMpuMeetPlatformUnConnect": "会议平台未连接",
+
+    "ErrMpuMeetDispatchGroupNameDuplicate":"会议分组名重复",
+    "ErrMpuMeetDispatchGroupNotExist":"会议分组不存在",
+    "ErrMpuMeetDispatchGroupMemNotNullDelForbid":"请先删除分组中的会议调度",
+
+    "ErrMpuMeetDispatchNotExist":"会议调度不存在",
+    "ErrMpuMeetDispatchNameDuplicate":"会议调度名称重复",
+    "ErrMpuMeetDispatchNameInvalid":"会议调度名称无效",
+    "ErrMpuMeetDispatchBindMatrixSchemeNotExist":"会议调度绑定矩阵预案不存在",
+    "ErrMpuMeetDispatchBindMeetTemplateNotExist":"会议调度绑定会议模板不存在",
+    "ErrMpuMeetDispatchBindMatrixSchemeDuplicate":"矩阵预案已被其它会议调度绑定",
+    "ErrMpuMeetDispatchUnBindMeetTemplate":"未绑定会议模板或绑定模板已删除",
+    "ErrMpuMeetDispatchBindMeetingStopped": "会议调度关联MCU会议已关闭",
+    "ErrMpuMeetDispatchLoadingEditForbid":"不可编辑加载中的会议调度配置",
+    "ErrMpuMeetDispatchLoadingDelForbid":"不可删除加载中的会议调度配置",
+    "ErrMpuMeetDispatchLoading":"会议调度已启用",
+    "ErrMpuMeetDispatchUnLoading":"会议调度未启用",
+    "ErrMpuMeetDispatchBindMatrixSchemeNoPermission": "会议调度绑定矩阵预案无权限"
+}

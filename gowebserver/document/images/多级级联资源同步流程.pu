@@ -1,0 +1,68 @@
+@startuml
+
+skinparam titleFontSize 25
+skinparam titleFontColor  #red
+title 代理多级级联数据同步时序图
+
+skinparam backgroundColor #LightBlue
+skinparam handwritten false
+skinparam sequenceParticipant underline
+
+
+box "一级显控平台" #LightBlue
+participant 代理A     as mpuaps1
+participant 显控A     as mpu1
+end box
+box "二级显控平台" #LightBlue
+participant 代理B     as mpuaps2
+participant 显控B     as mpu2
+end box
+box "三级显控平台" #LightBlue
+participant 代理C     as mpuaps3
+participant 显控C     as mpu3
+end box
+
+rnote over mpuaps1,mpu1
+代理A与显控平台同步数据OK
+endrnote
+|||
+rnote over mpuaps1,mpu1
+代理A添加代理B为下级(web配置)
+endrnote
+mpuaps1 ->  mpuaps2 : 级联连接\nPOST: http://{ip}:{port}/mpuaps/v1/auth/login
+mpuaps2 --> mpuaps1 : token
+mpuaps1 ->  mpuaps2 : 订阅通知\nWS  : ws://{ip}:{port}/mpuaps/v1/ws/subscribe
+rnote over mpuaps2,mpu2
+代理B与显控B资源同步完成
+endrnote
+|||
+mpuaps2 --> mpuaps1 : emNotifyResourcesReady\n通知资源准备Ok
+mpuaps1 ->  mpuaps2 : 查下级级联配置\nGET: http://{ip}:{port}/mpuaps/v1/config/cascade
+mpuaps2 --> mpuaps1 : 级联配置信息
+mpuaps1 ->  mpuaps2 : 查下级通道资源\nGET: http://{ip}:{port}/mpuaps/v1/channel
+mpuaps2 --> mpuaps1 : 通道资源
+mpuaps1 ->  mpuaps2 : 查下级通道分组\nGET: http://{ip}:{port}/mpuaps/v1/channelGroup
+mpuaps2 --> mpuaps1 : 通道分组
+|||
+|||
+rnote over mpuaps2
+代理B添加代理C为下级(web配置)
+endrnote
+mpuaps2 --> mpuaps1 : emNotifyCascadeInfoUpdate\n通知添加下级平台代理C
+mpuaps2 ->  mpuaps3 : 级联连接
+mpuaps2 ->  mpuaps3 : websocket订阅通知
+|||
+rnote over mpuaps3,mpu3
+代理C与显控C资源同步完成
+endrnote
+|||
+mpuaps3 --> mpuaps2 : emNotifyResourcesReady\n通知资源准备OK
+rnote over mpuaps2,mpuaps3
+代理B与代理C数据同步完成
+endrnote
+mpuaps2 --> mpuaps1 : emNotifyCascadeInfoUpdate\n通知与代理C资源同步完成
+mpuaps1 ->  mpuaps2 : 根据代理C[cascadeId]查通道信息\nGET: http://{ip}:{port}/mpuaps/v1/channel
+mpuaps2 --> mpuaps1 : 代理C通道资源
+mpuaps1 ->  mpuaps2 : 根据代理C[cascadeId]查通道分组信息\nGET: http://{ip}:{port}/mpuaps/v1/channelGroup
+mpuaps2 --> mpuaps1 : 代理C通道分组信息
+@enduml

@@ -1,0 +1,15 @@
+{
+    "DeviceOnlineRecordExcelHeadId": "record number",
+    "DeviceOnlineRecordExcelHeadDeviceModel": "device model",
+    "DeviceOnlineRecordExcelHeadDeviceAlias": "device name",
+    "DeviceOnlineRecordExcelHeadDeviceSerialNumber": "device serial number",
+    "DeviceOnlineRecordExcelHeadDeviceBoxNumber": "device box number",
+    "DeviceOnlineRecordExcelHeadDeviceSlotNumber": "device slot number",
+    "DeviceOnlineRecordExcelHeadDeviceState": "device number",
+    "DeviceOnlineRecordExcelHeadTime": "time",
+
+    "EDevStateUnknow" : "Unknown",
+    "EDevStateOnline" : "Online",
+    "EDevStateOffline" : "Offline",
+    "EDevStateIncompatible" : "The slot is not compatible with the device."
+}

@@ -1,0 +1,30 @@
+{
+    "ErrMpusrvChannelUnknown": "unknown error",
+    "ErrMpusrvChannelInvalidChnId": "invalid signal source",
+    "ErrMpusrvChannelNoPermission": "signal source no permission",
+    "ErrMpusrvChannelNoExist":"The channel does not exist.",
+
+    "ErrMpusrvChannelGroupInvalidChnGroupId": "invalid channel group",
+    "ErrMpusrvChannelGroupInvalidParentGroupId": "invalid parent group ID",
+    "ErrMpusrvChannelGroupCreateSubGroupForbid": "create subgroup forbidden",
+    "ErrMpusrvChannelGroupSysDefGroupNameUnavailable": "use the system default group name forbidden",
+    "ErrMpusrvChannelGroupNameDuplicate": "group name duplicate",
+    "ErrMpusrvChannelGroupNameInvalid": "invalid group name",
+    "ErrMpusrvChannelGroupModifyForbid": "modify system's group forbidden",
+
+    "ErrMpusrvChannelGroupMemMustBeVideoInput": "subgroup members must be video input channels at this level",
+    "ErrMpusrvChannelGroupMemMustBeVideoOutput": "subgroup members must be video output channels at this level",
+    "ErrMpusrvChannelGroupMemMustBeAudioInput": "subgroup members must be audio input channels at this level",
+    "ErrMpusrvChannelGroupMemMustBeAudioOutput": "subgroup members must be audio output channels at this level",
+
+    "ErrMpuSrvChnFavoriteIdInvalid":"The favorite folder does not exist.",
+    "ErrMpusrvChnFavoriteMoveFailed":"Moving the favorite folder failed.",
+    "ErrMpusrvChnFavoriteNameInvalid":"Invalid Folder Name",
+    "ErrMpusrvChnFavoriteParentNodeInvalid":"The parent group does not exist.",
+    "ErrMpusrvChnFavoriteNameDuplicate":"The name already exists.",
+    "ErrMpusrvChnFavoriteNumLimit":"No more favorite folders can be added.",
+    "ErrMpusrvChnFavoriteDelRootNodeForbid":"Deleting the root node is not allowed.",
+
+    "ErrMpuSrvAssociationChnOnlySupportLocalChn":"Only local-level signal sources can be associated.",
+    "ErrMpuSrvAssociationChnBoundOther":"Already Bound to Another Signal Source"
+}

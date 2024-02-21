@@ -1,0 +1,166 @@
+@startuml
+
+skinparam titleFontSize 25
+skinparam titleFontColor  #red
+title 网络点位更新逻辑
+
+skinparam backgroundColor #LightBlue
+skinparam handwritten false
+skinparam sequenceParticipant underline
+skinparam actorStyle awesome
+
+
+actor 统一设备 as client
+
+box "显控平台" #LightBlue
+
+box "SMMGR"
+participant umtio      as umtio
+participant SMMGR      as smmgr
+end box
+
+participant 显控       as mpuserver
+participant 代理       as mpuaps
+end box
+
+box "mpuaps_webclient"
+participant 代理客户端 as webclient
+end box
+
+note over client
+前置条件：Umt点位属于分组A、B、C
+end note
+|||
+note over client
+当前实现逻辑
+end note
+==点位从某一分组中删除逻辑==
+client ->  client : 点位从分组A删除
+client ->  umtio  : 通知设备还在分组B、C分组
+
+umtio  -> smmgr   : 通知设备还在分组B、C分组
+
+smmgr  -> smmgr     : 删除对应设备
+smmgr  -> mpuserver : 通知从分组A中删除
+mpuserver -> mpuaps : 通知从分组A中删除
+mpuaps -> webclient : 通知分组A删除设备
+
+smmgr  -> mpuserver : 通知从分组B中删除
+mpuserver -> mpuaps : 通知从分组B中删除
+mpuaps -> webclient : 通知分组B删除设备
+
+smmgr  -> mpuserver : 通知从分组C中删除
+mpuserver -> mpuaps : 通知从分组C中删除
+mpuaps -> webclient : 通知分组C删除设备
+
+smmgr  -> mpuserver  : 通知添加到分组B
+mpuserver  -> mpuaps : 通知添加到分组B
+mpuaps -> webclient  : 通知分组A添加设备
+
+smmgr  -> mpuserver  : 通知添加到分组C
+mpuserver  -> mpuaps : 通知添加到分组C
+mpuaps -> webclient  : 通知分组C添加设备
+|||
+==统一设备新增了一个分组D,并且Umt分组已同步完成==
+==点位添加到某一分组中逻辑==
+client ->  client : 点位添加到分组D中
+client ->  umtio  : 通知设备在分组A、B、C、D分组
+
+umtio  -> smmgr   : 通知设备在分组A、B、C、D分组
+
+smmgr  -> smmgr     : 删除对应设备
+smmgr  -> mpuserver : 通知从分组A中删除
+mpuserver -> mpuaps : 通知从分组A中删除
+mpuaps -> webclient : 通知分组A删除设备
+
+smmgr  -> mpuserver : 通知从分组B中删除
+mpuserver -> mpuaps : 通知从分组B中删除
+mpuaps -> webclient : 通知分组B删除设备
+
+smmgr  -> mpuserver : 通知从分组C中删除
+mpuserver -> mpuaps : 通知从分组C中删除
+mpuaps -> webclient : 通知分组C删除设备
+
+smmgr  -> mpuserver  : 通知添加到分组A
+mpuserver  -> mpuaps : 通知添加到分组A
+mpuaps -> webclient  : 通知分组A添加设备
+
+smmgr  -> mpuserver  : 通知添加到分组B
+mpuserver  -> mpuaps : 通知添加到分组B
+mpuaps -> webclient  : 通知分组B添加设备
+
+smmgr  -> mpuserver  : 通知添加到分组C
+mpuserver  -> mpuaps : 通知添加到分组B
+mpuaps -> webclient  : 通知分组C添加设备
+
+smmgr  -> mpuserver  : 通知添加到分组D
+mpuserver  -> mpuaps : 通知添加到分组D
+mpuaps -> webclient  : 通知分组D添加设备
+|||
+==修改点位名称逻辑==
+client ->  client : 修改点位的名称
+client ->  umtio  : 通知设备名称修改以及设备所属分组A、B、C
+
+umtio  -> smmgr   : 通知设备修改(批量通知分组A中设备修改、分组B中设备修改、分组C中设备修改)
+
+smmgr  -> smmgr     : 删除对应设备
+smmgr  -> mpuserver : 通知从分组A中删除
+mpuserver -> mpuaps : 通知从分组A中删除
+mpuaps -> webclient : 通知分组A删除设备
+
+smmgr  -> mpuserver : 通知从分组B中删除
+mpuserver -> mpuaps : 通知从分组B中删除
+mpuaps -> webclient : 通知分组B删除设备
+
+smmgr  -> mpuserver : 通知从分组C中删除
+mpuserver -> mpuaps : 通知从分组C中删除
+mpuaps -> webclient : 通知分组C删除设备
+
+smmgr  -> mpuserver  : 通知添加到分组A
+mpuserver  -> mpuaps : 通知添加到分组A
+mpuaps -> webclient  : 通知分组A添加设备
+
+smmgr  -> mpuserver  : 通知添加到分组B
+mpuserver  -> mpuaps : 通知添加到分组B
+mpuaps -> webclient  : 通知分组B添加设备
+
+smmgr  -> mpuserver  : 通知添加到分组C
+mpuserver  -> mpuaps : 通知添加到分组B
+mpuaps -> webclient  : 通知分组C添加设备
+|||
+==点位上下线更新逻辑==
+client ->  client : 点位状态更新
+client ->  umtio  : 通知设备上下线
+
+umtio  -> smmgr   : 通知设备上下线
+
+smmgr  -> smmgr   : 查找对应设备(设备属于多个分组,有多条数据)
+smmgr  -> mpuserver : 通知从分组A中设备修改
+mpuserver -> mpuaps : 通知从分组A中设备修改
+mpuaps -> mpuaps    : 判断设备状态是否一致
+mpuaps -> webclient : 通知设备更新及设备所属分组信息
+
+smmgr  -> mpuserver : 通知从分组B中设备修改
+mpuserver -> mpuaps : 通知从分组B中设备修改
+mpuaps -> mpuaps    : 判断设备状态是否一致
+mpuaps -> webclient : 通知设备更新及设备所属分组信息
+
+smmgr  -> mpuserver : 通知从分组C中设备修改
+mpuserver -> mpuaps : 通知从分组C中设备修改
+mpuaps -> mpuaps    : 判断设备状态是否一致,不一致则触发更新,状态一致不处理.
+mpuaps -> webclient : 通知设备更新及设备所属分组信息
+
+|||
+==建议优化逻辑==
+note over client
+smmgr判断设备从哪个分组里删除了,触发一条删除通知即可
+end note
+client ->  client : 点位从分组A删除
+client ->  umtio  : 通知设备还在分组B、C分组
+
+umtio  -> smmgr   : 通知设备还在分组B、C分组
+smmgr  -> smmgr   : 根据通知查询确认从A分组中删除
+smmgr  -> mpuserver : 通知从分组A中删除
+mpuserver -> mpuaps : 通知从分组A中删除
+
+@enduml

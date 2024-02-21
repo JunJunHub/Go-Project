@@ -1,0 +1,35 @@
+{
+    "AlarmRecordExcelHeadAlarmId": "alarm ID",
+    "AlarmRecordExcelHeadAlarmEventType": "alarm type",
+    "AlarmRecordExcelHeadAlarmMode": "alarm mode",
+    "AlarmRecordExcelHeadAlarmTime": "alarm time",
+    "AlarmRecordExcelHeadAlarmLevel": "alarm level",
+    "AlarmRecordExcelHeadAlarmCount": "alarm count",
+    "AlarmRecordExcelHeadAlarmState": "alarm clean status",
+    "AlarmRecordExcelHeadAlarmCleanTime": "alarm clean time",
+    "AlarmRecordExcelHeadAlarmParam": "alarm setting",
+    "AlarmRecordExcelHeadAlarmDetailInfo": "alarm detail information",
+
+
+    "EAlarmStateUnHandel": "unhandled alarm",
+    "EAlarmStateTemporaryNotAlarm": "temporary elimination of alarms",
+    "EAlarmStateIgnore" :"alarm ignore",
+    "EAlarmStateAutoClean":"auto clear alarm",
+
+
+    "EAlarmEventTypeUnknow": "unknown event",
+    "EAlarmEventAVSignalTransmissionAbnormal": "abnormal audio and video signal transmission",
+    "EAlarmEventDeviceOffline" :" board devices offline",
+    "EAlarmEventMpuStateAbnormal":"the main control board is in poor condition",
+
+
+    "EAlarmLevelUnknow": "unknown",
+    "EAlarmLevelSeverity": "important",
+    "EAlarmLevelMinor" :"normal",
+
+
+    "EAlarmModeUnknow":"unknown",
+    "EAlarmModeClientReminder": "client reminding",
+    "EAlarmModeEmail": "e-mail reminding",
+    "EAlarmModeMobilePhoneMessage" :"mobile phone message reminding"
+}

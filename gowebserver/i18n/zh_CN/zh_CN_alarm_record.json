@@ -1,0 +1,35 @@
+{
+    "AlarmRecordExcelHeadAlarmId": "告警ID",
+    "AlarmRecordExcelHeadAlarmEventType": "告警类型",
+    "AlarmRecordExcelHeadAlarmMode": "告警方式",
+    "AlarmRecordExcelHeadAlarmTime": "告警时间",
+    "AlarmRecordExcelHeadAlarmLevel": "告警等级",
+    "AlarmRecordExcelHeadAlarmCount": "告警次数",
+    "AlarmRecordExcelHeadAlarmState": "告警状态",
+    "AlarmRecordExcelHeadAlarmCleanTime": "消警时间",
+    "AlarmRecordExcelHeadAlarmParam": "告警配置",
+    "AlarmRecordExcelHeadAlarmDetailInfo": "告警内容",
+
+
+    "EAlarmStateUnHandel": "未消警",
+    "EAlarmStateTemporaryNotAlarm": "临时消警",
+    "EAlarmStateIgnore" :"永不告警",
+    "EAlarmStateAutoClean":"自动消警",
+
+
+    "EAlarmEventTypeUnknow": "未知事件",
+    "EAlarmEventAVSignalTransmissionAbnormal": "音视频信号传输异常",
+    "EAlarmEventDeviceOffline" :"板卡设备离线",
+    "EAlarmEventMpuStateAbnormal":"主控板状态不佳",
+
+
+    "EAlarmLevelUnknow": "未知",
+    "EAlarmLevelSeverity": "严重",
+    "EAlarmLevelMinor" :"普通",
+
+
+    "EAlarmModeUnknow":"未知",
+    "EAlarmModeClientReminder": "客户端提醒",
+    "EAlarmModeEmail": "邮件提醒",
+    "EAlarmModeMobilePhoneMessage" :"短信提醒"
+}

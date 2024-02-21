@@ -1,0 +1,9 @@
+{
+    "EChannelOffline":"Signal Source Lost | Signal Output Abnormal",
+    "EChannelOnline":"Normal",
+    "EChannelDel":"Signal Source Offline (Board Offline) | Signal Output Abnormal (Board Offline)",
+    "EChannelTakeBack":"Upper-Level Pushing Point Retrieving",
+    "EChannelUnusable":"Cascading Channels Unavailable",
+    "EChannelUnUse":"Port's Physical Connection Abnormal",
+    "EChannelStateUnknow":"Unknown Status"
+}

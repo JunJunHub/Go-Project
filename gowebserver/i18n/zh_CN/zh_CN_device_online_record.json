@@ -1,0 +1,15 @@
+{
+    "DeviceOnlineRecordExcelHeadId": "记录ID",
+    "DeviceOnlineRecordExcelHeadDeviceModel": "设备型号",
+    "DeviceOnlineRecordExcelHeadDeviceAlias": "设备类型",
+    "DeviceOnlineRecordExcelHeadDeviceSerialNumber": "设备序列号",
+    "DeviceOnlineRecordExcelHeadDeviceBoxNumber": "机箱编号",
+    "DeviceOnlineRecordExcelHeadDeviceSlotNumber": "槽位号",
+    "DeviceOnlineRecordExcelHeadDeviceState": "状态",
+    "DeviceOnlineRecordExcelHeadTime": "时间",
+
+    "EDevStateUnknow" : "未知",
+    "EDevStateOnline" : "在线",
+    "EDevStateOffline" : "离线",
+    "EDevStateIncompatible" : "槽位设备不兼容"
+}

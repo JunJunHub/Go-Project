@@ -1,0 +1,6 @@
+{
+    "ErrMpusrvAlarmToneFileNotExist": "告警提示音文件不存在",
+    "ErrMpusrvAlarmToneFileReadFailed": "无法读取告警提示音文件",
+    "ErrMpusrvAlarmRecordNotExist": "告警信息不存在",
+    "ErrMpusrvAlarmRecordIsHandled": "告警已处理"
+}

@@ -1,0 +1,23 @@
+{
+    "EDevTypeUnknow": "unknown device",
+    "EDevTypeAudioServer": "audio server",
+    "EDevTypeAudioDSP": "audio DSP",
+    "EDevTypeInputBoard": "input board",
+    "EDevTypeOutputBoard": "output board",
+    "EDevTypeCutBoard": "cut board",
+    "EDevTypeMatrixSwitchBoard": "switch board(chassis management unit)",
+    "EDevTypeAVSignalTransmitter": "signal transmitter",
+    "EDevTypeAVSignalReceiver": "signal receiver",
+    "EDevTypeDecodeBoard": "decode board",
+    "EDevTypeLedTB": "Led transmitter board",
+    "EDevTypeEncoder": "encoder",
+    "EDevTypeDecoder": "decoder",
+    "EDevTypeStackedMSP": "stacked MSP",
+    "EDevTypeCascadeMSP": "cascade MSP",
+    "EDevTypeVideoSwap": "video processor",
+    "EDevTypeNMS": "network management processor",
+    "EDevTypeOther": "other",
+    "EDevTypeMpuBoard": "main control board",
+    "EDevTypeDante": "dante",
+    "EDevTypePcServer": "cluster Server"
+}

@@ -1,0 +1,86 @@
+@startuml
+
+skinparam titleFontSize 25
+skinparam titleFontColor  #red
+title 级联开窗时序图
+
+skinparam backgroundColor #LightBlue
+skinparam handwritten false
+skinparam sequenceParticipant underline
+skinparam actorStyle awesome
+
+actor       客户端A   as client1
+box "显控平台" #LightBlue
+participant 代理A     as mpuaps1
+participant 显控A     as mpu1
+end box
+box "级联显控平台" #LightBlue
+participant 代理N     as mpuaps2
+participant 显控N     as mpu2
+end box
+
+
+==各级代理数据同步完成==
+|||
+note over client1,mpu1
+客户端只能操作本级的大屏
+级联时对下级大屏的调度会自动跳转登录到下级大屏调度页面去操作
+end note
+|||
+client1 ->  mpuaps1 : 开窗请求
+activate mpuaps1
+|||
+
+group 级联模拟信号开窗
+    mpuaps1 ->  mpuaps2   : 向级联平台请求关联的网络点位信息
+	mpuaps1 <-- mpuaps2   : 返回关联的网络点位信息	
+end
+
+group 网络点位资源开窗
+	mpuaps1 ->  mpu1     : grpc接口将点位信息推送给显控主业务
+	activate mpu1
+	
+	mpu1    ->  mpu1     : 主业务根据点位GBID分配u32的点位ID,并保存点位信息
+	mpuaps1 <-- mpu1     : 点位u32ID返回给代理
+	deactivate mpu1
+	|||
+	note over mpuaps1,mpu1
+	只有级联会议点位需要走下面获取会议C节点的逻辑
+	end note
+	group 级联会议点位资源开窗	【上级推送会议点位】或【下级会议点位】
+		mpuaps1 -> mpuaps2 : 向级联平台请求会议C节点
+		activate mpuaps2
+		
+		mpuaps2 ->  mpu2   : grpc接口将点位信息推送给显控主业务
+		activate mpu2
+		mpu2    ->  mpu2     : 主业务根据点位GBID分配u32的点位ID\n保存点位信息
+		mpuaps2 <-- mpu2     : 返回点位u32ID
+		mpuaps2 ->  mpu2     : 向显控平台获取对应会议点位C节点\n这里是走的显控预监接口(webrtc方式)
+		mpuaps2 <-- mpu2     : 返回会议点位C节点信息(预监拉流url中携带)
+		mpuaps1 <-- mpuaps2  : 返回会议点位C节点信息
+		|||
+		deactivate mpu2
+		deactivate mpuaps2
+		|||
+		note over mpuaps1,mpu1 #aqua
+		这里有个问题待处理
+		使用下级的网络信号开窗会将网络信号推给了本级的显控主业务
+		？什么时候告诉显控主业务删除这个信号
+		？这个点位的状态怎么与显控主业务同步
+		end note
+		|||
+		mpuaps1 ->  mpu1     : grpc接口将点位信息推送给本级显控主业务\n会议点位C节点(streamId)以及穿网ID(netID)
+		mpuaps1 ->  mpuaps1  : 保存级联会议点位C节点
+		|||
+	end
+	|||
+end
+	|||
+	mpuaps1 ->  mpu1     : grpc开窗接口(使用点位u32ID)
+	mpuaps1 <-- mpu1     : 返回开窗结果和窗口ID
+	mpuaps1 ->  mpuaps1  : 校验grpc开窗结果,成功保存开窗数据
+	client1 <-- mpuaps1  : 返回开窗结果
+	deactivate  mpuaps1
+
+
+@enduml

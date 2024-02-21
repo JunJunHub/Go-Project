@@ -1,0 +1,44 @@
+@startuml
+
+skinparam titleFontSize 25
+skinparam titleFontColor  #red
+title 用户登录时序图
+
+skinparam backgroundColor #LightBlue
+skinparam handwritten false
+skinparam sequenceParticipant underline
+skinparam actorStyle awesome
+
+actor       客户端 as client
+participant 代理   as mpuaps
+
+
+==与显控平台资源同步完成==
+|||
+note over client,mpuaps
+用户不支持多端登录
+用户登录不允许抢占
+end note
+|||
+client -> mpuaps : 登录请求 /auth/login
+activate mpuaps
+mpuaps -> mpuaps : 校验用户是否锁定
+mpuaps -> mpuaps : 校验用户密码
+mpuaps -> mpuaps : 校验是否在其他地点登录
+mpuaps -> mpuaps : 校验登录方式
+|||
+group 上级级联登录
+    note over client,mpuaps
+	只能被一个上级平台级联登录
+	end note
+	mpuaps -> mpuaps : 校验级联关系
+	mpuaps -> mpuaps : 校验是否被其他上级连接
+end
+|||
+mpuaps ->  mpuaps : 获取登录用户详细信息
+mpuaps ->  mpuaps : 基于登录名、登录IP、时间生成登录用户信息缓存Key
+mpuaps ->  mpuaps : 记录登录日志(成功/失败)
+client <-- mpuaps : 返回登录结果
+deactivate mpuaps
+
+@enduml

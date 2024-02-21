@@ -1,0 +1,30 @@
+{
+    "ErrMpusrvChannelUnknown": "未知错误",
+    "ErrMpusrvChannelInvalidChnId": "信号源不存在",
+    "ErrMpusrvChannelNoPermission": "信号源无权限",
+    "ErrMpusrvChannelNoExist": "通道不存在",
+
+    "ErrMpusrvChannelGroupInvalidChnGroupId": "通道分组不存在",
+    "ErrMpusrvChannelGroupInvalidParentGroupId": "无效的父分组ID",
+    "ErrMpusrvChannelGroupCreateSubGroupForbid": "分组下禁止创建子分组",
+    "ErrMpusrvChannelGroupSysDefGroupNameUnavailable": "不可使用系统默认分组名",
+    "ErrMpusrvChannelGroupNameDuplicate": "分组名重复",
+    "ErrMpusrvChannelGroupNameInvalid": "无效的分组名",
+    "ErrMpusrvChannelGroupModifyForbid": "不可编辑修改系统自建分组",
+
+    "ErrMpusrvChannelGroupMemMustBeVideoInput": "分组成员必须是本级视频输入通道",
+    "ErrMpusrvChannelGroupMemMustBeVideoOutput": "分组成员必须是本级视频输出通道",
+    "ErrMpusrvChannelGroupMemMustBeAudioInput": "分组成员必须是本级音频输入通道",
+    "ErrMpusrvChannelGroupMemMustBeAudioOutput": "分组成员必须是本级音频输出通道",
+
+    "ErrMpuSrvChnFavoriteIdInvalid": "收藏夹不存在",
+    "ErrMpusrvChnFavoriteMoveFailed": "移动收藏夹失败",
+    "ErrMpusrvChnFavoriteNameInvalid": "收藏夹名称无效",
+    "ErrMpusrvChnFavoriteParentNodeInvalid": "父分组不存在",
+    "ErrMpusrvChnFavoriteNameDuplicate": "收藏夹名称重复",
+    "ErrMpusrvChnFavoriteNumLimit": "收藏夹个数达到上限",
+    "ErrMpusrvChnFavoriteDelRootNodeForbid": "禁止删除根节点",
+
+    "ErrMpuSrvAssociationChnOnlySupportLocalChn": "仅支持关联配置本级信号源",
+    "ErrMpuSrvAssociationChnBoundOther": "已绑定其它信号源"
+}

@@ -1,0 +1,14 @@
+{
+  "ErrMpuApplianceSchemeGroupNameDuplicate": "环境设备分组名称重复",
+  "ErrMpuApplianceSchemeGroupNoEmpty": "环境设备分组非空，不支持当前操作",
+  "ErrMpuApplianceRelayNameDuplicate": "继电器名称重复",
+  "ErrMpuApplianceRelaySwitchOutNumInvalid": "继电器开关数目不在合法范围内",
+  "ErrMpuApplianceRelayTRxIpOrChannelIdDuplicate": "一个盒子或通道不可被同时绑定多个继电器",
+  "ErrMpuApplianceRelayUsed": "继电器已被绑定环境设备，不支持当前操作",
+  "ErrMpuApplianceRelayNoExist": "继电器不存在",
+  "ErrMpuApplianceDevNameDuplicate": "环境设备名称重复",
+  "ErrMpuApplianceDevNameEmpty": "环境设备名称为空",
+  "ErrMpuApplianceDevCtrlModuleEmpty": "环境设备未配置控制模块",
+  "ErrMpuApplianceDevCtrlModuleDuplicate": "控制模块重复或已被其他环境设备配置使用",
+  "ErrMpuApplianceDevNoExist": "环境设备不存在"
+}

@@ -1,0 +1,26 @@
+{
+    "ErrMpuMeetPlatformNotExist":"The conferencing platform does not exist.",
+    "ErrMpuMeetPlatformAliasDuplicate":"The name already exists.",
+    "ErrMpuMeetPlatformIPDuplicate":"The IP address already exists.",
+    "ErrMpuMeetPlatformInuseDelForbid":"The conferencing platform is still in use. You cannot delete it.",
+    "ErrMpuMeetPlatformUserInuseDelForbid":"The conferencing platform account is still in use. You cannot delete it.",
+    "ErrMpuMeetPlatformUsernameDuplicate":"The username already exists.",
+
+    "ErrMpuMeetDispatchGroupNameDuplicate":"The group name already exists.",
+    "ErrMpuMeetDispatchGroupNotExist":"The group does not exist.",
+    "ErrMpuMeetDispatchGroupMemNotNullDelForbid":"Deleting a non-empty group is not allowed.",
+
+    "ErrMpuMeetDispatchNotExist":"The conference does not exist.",
+    "ErrMpuMeetDispatchNameDuplicate":"The conference name already exists.",
+    "ErrMpuMeetDispatchNameInvalid":"The conference name is invalid.",
+    "ErrMpuMeetDispatchBindMatrixSchemeNotExist":"The matrix scheme bound to the conference does not exist.",
+    "ErrMpuMeetDispatchBindMeetTemplateNotExist":"The conference template bound to the conference does not exist.",
+    "ErrMpuMeetDispatchBindMatrixSchemeDuplicate":"The matrix scheme is already bound to another conference.",
+    "ErrMpuMeetDispatchUnBindMeetTemplate":"No conference template is bound or the bound one is already deleted.",
+    "ErrMpuMeetDispatchBindMeetingStopped":"The conference is ended by the related MCU.",
+    "ErrMpuMeetDispatchLoadingEditForbid":"The conference that is being loaded cannot be reconfigured.",
+    "ErrMpuMeetDispatchLoadingDelForbid":"The conference that is being loaded cannot be deleted.",
+    "ErrMpuMeetDispatchLoading":"Conference Already Started.",
+    "ErrMpuMeetDispatchUnLoading":"Conference Already Ended.",
+    "ErrMpuMeetDispatchBindMatrixSchemeNoPermission": "The matrix scheme bound to the conference no permission."
+}

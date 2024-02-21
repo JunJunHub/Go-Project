@@ -1,0 +1,14 @@
+{
+  "ErrMpuApplianceSchemeGroupNameDuplicate":"The name of the environment device group already exists.",
+  "ErrMpuApplianceSchemeGroupNoEmpty":"The operation is not supported because the environment device group is not empty.",
+  "ErrMpuApplianceRelayNameDuplicate":"The relay name already exists.",
+  "ErrMpuApplianceRelaySwitchOutNumInvalid":"The number of relay switches is invalid.",
+  "ErrMpuApplianceRelayTRxIpOrChannelIdDuplicate":"One box or channel cannot be bound to multiple relays at the same time.",
+  "ErrMpuApplianceRelayUsed":"The operation is not supported because the relay has been bound to an environment device.",
+  "ErrMpuApplianceRelayNoExist":"The relay does not exist.",
+  "ErrMpuApplianceDevNameDuplicate":"The environment device name already exists.",
+  "ErrMpuApplianceDevNameEmpty":"Please enter a name for the environment device.",
+  "ErrMpuApplianceDevCtrlModuleEmpty":"The environment device is not configured with a control module.",
+  "ErrMpuApplianceDevCtrlModuleDuplicate":"The control module is already used by or configured for another environment device.",
+  "ErrMpuApplianceDevNoExist":"The environment device does not exist."
+}

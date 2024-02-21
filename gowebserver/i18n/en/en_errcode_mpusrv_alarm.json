@@ -1,0 +1,6 @@
+{
+    "ErrMpusrvAlarmToneFileNotExist": "alarm tone not found",
+    "ErrMpusrvAlarmToneFileReadFailed": "alarm tone read failed",
+    "ErrMpusrvAlarmRecordNotExist": "alarm recording not found",
+    "ErrMpusrvAlarmRecordIsHandled": "alarm handled"
+}

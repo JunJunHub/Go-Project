@@ -1,0 +1,20 @@
+#显控功能能力集配置
+[Capabilities]
+    #大屏调度功能
+    [TvWallDispatchModel]
+        Enable = true
+		
+    #音视频矩阵调度功能
+    [MatrixDispatchModel]
+        Enable = true                           #是否启用矩阵功能
+		[MatrixDispatchCap]
+            EMatrixDispatchVideoSupport      = true  #是否支持视频矩阵
+            EMatrixDispatchAudioSupport      = true  #是否支持音频矩阵
+            EMatrixDispatchAudioMixerSupport = false #是否支持混音矩阵
+            EMatrixDispatchTvWallSupport     = true  #是否支持大屏矩阵
+
+    #环境设备调度功能
+    [DeviceControlCap]
+        Enable = true
+
+    #todo add other model

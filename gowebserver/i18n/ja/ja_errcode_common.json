@@ -1,0 +1,22 @@
+{
+    "codeHttpOk": "成功",
+    "codeHttpUnauthorized": "登录授权过期,请重新登录",
+    "ErrCommonInternalError": "内部错误",
+    "ErrCommonValidationFailed": "数据校验失败",
+    "ErrCommonDbOperationError": "数据库操作失败",
+    "ErrCommonInvalidParameter": "无效的参数",
+    "ErrCommonParsingParameter": "参数解析出错",
+    "ErrCommonInvalidOperation": "无效的操作",
+    "ErrCommonInvalidConfiguration": "无效的配置",
+    "ErrCommonMissingConfiguration": "配置缺失",
+    "ErrCommonNotImplemented": "不可执行",
+    "ErrCommonNotSupported": "不支持",
+    "ErrCommonOperationFailed": "操作失败",
+    "ErrCommonServerBusy": "系统忙",
+    "ErrCommonUnknown": "未知错误",
+    "ErrCommonInvalidRequest": "无效的请求",
+    "ErrCommonHttpServerStartErr": "服务启动失败",
+    "ErrCommonDBConnectErr": "数据库连接失败",
+    "ErrCommonDBLoading": "数据库初始化中",
+    "ErrCommonSyncDefaultConnectMPUResources": "正在同步显控平台资源"
+}

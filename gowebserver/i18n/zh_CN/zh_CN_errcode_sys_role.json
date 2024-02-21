@@ -1,0 +1,22 @@
+{
+    "ErrSysRoleInvalidRoleId": "角色不存在",
+    "ErrSysRoleNameDuplicate": "角色名重复",
+    "ErrSysRoleNotSupportedCustomPermissions": "角色不支持自定义权限",
+    "ErrSysRoleDelDefaultRoleForbid": "禁止删除系统内置角色",
+    "ErrSysRoleDelInUseRoleForbid": "角色生效中,请先删除关联账户",
+    "ErrSysRoleModifyDefaultRoleForbid": "禁止修改系统内置角色信息",
+    "ErrSysRoleBindMenuDuplicate": "角色绑定菜单重复",
+    "ErrSysRoleBindMenuInvalid": "角色绑定菜单无效",
+    "ErrSysRoleBindChnGroupDuplicate": "角色绑定通道分组资源重复",
+    "ErrSysRoleBindChnGroupInvalid": "角色绑定通道分组资源无效",
+    "ErrSysRoleBindTvWallDuplicate": "角色绑定大屏资源重复",
+    "ErrSysRoleBindTvWallInvalid": "角色绑定大屏资源无效",
+    "ErrSysRoleBindMatrixSchemeDuplicate": "角色绑定矩阵预案资源重复",
+    "ErrSysRoleBindMatrixSchemeInvalid": "角色绑定矩阵预案资源无效",
+    "ErrSysRoleBindMatrixSchemeGroupDuplicate": "角色绑定矩阵预案分组资源重复",
+    "ErrSysRoleBindMatrixSchemeGroupInvalid": "角色绑定矩阵预案分组资源无效",
+    "ErrSysRoleBindMeetDispatchDuplicate": "角色绑定会议调度资源重复",
+    "ErrSysRoleBindMeetDispatchInvalid": "角色绑定会议调度资源无效",
+    "ErrSysRoleBindMeetDispatchGroupDuplicate": "角色绑定会议调度分组资源重复",
+    "ErrSysRoleBindMeetDispatchGroupInvalid": "角色绑定会议调度分组资源无效"
+}

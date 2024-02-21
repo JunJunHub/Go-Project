@@ -1,0 +1,40 @@
+@startuml
+
+skinparam titleFontSize 25
+skinparam titleFontColor  #red
+title 同步显控数据时序图
+
+skinparam backgroundColor #LightBlue
+skinparam handwritten false
+skinparam sequenceParticipant underline
+
+
+participant 代理A     as mpuaps1
+participant 显控A     as mpu1
+
+
+
+==代理与显控数据同步流程==
+mpuaps1 ->  mpu1 : grpc连接显控A
+mpuaps1 ->  mpu1 : grpc订阅显控通知
+...等待显控A初始化Ok...
+mpuaps1 ->  mpu1 : MpuAccessPlatformGet\n查显控A接入的统一设备、流媒体平台信息
+mpu1 --> mpuaps1 : 返回显控接入的第三方平台信息
+|||
+mpuaps1 ->  mpu1 : ChnnlListQuery\n查显控A的物理通道信息
+mpu1 --> mpuaps1 : 返回物理通达信息
+|||
+mpuaps1 ->  mpu1 : TVWallListQuery\n查显控A的大屏信息
+mpu1 --> mpuaps1 : 返回大屏信息
+|||
+mpuaps1 ->  mpu1 : UmtChnnlGroupListQuery\n查显控A的接入的UmtDev分组信息
+mpu1 --> mpuaps1 : 返回UmtDev分组
+|||
+mpuaps1 ->  mpu1 : MpuUmtDevDBFile
+mpu1 --> mpuaps1 : 返回FTP下载UmtDev数据信息
+|||
+mpuaps1 -> mpuaps1 : FTP下载网络点位数据
+|||
+mpu1 --> mpuaps1 : 通知
+
+@enduml

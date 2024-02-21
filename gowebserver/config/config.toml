@@ -1,0 +1,44 @@
+#配置运行环境
+[profile]
+    active = "local"                 #local、dev、prod
+
+#gf-cli工具配置(发布时，此配置可删除)
+[gfcli]
+    #编译配置
+    [gfcli.build]
+        name   = "mpuaps"             #可执行文件名
+        arch   = "amd64,arm64"        #编译架构
+        system = "linux,windows"      #编译系统
+        cgo    = 0                    #配置启用后gf交叉编译有问题, 请在Linux平台编译linux版本: go build
+        path   = "./bin"              #编译可执行文件存储目录
+        version= "v1.0.0"             #如果指定版本信息，那么程序生成的路径中会多一层以版本名称的目录
+
+    # DAO生成配置
+    ##common module
+    [[gfcli.gen.dao]]
+        link           = "mysql:root:msp123@tcp(127.0.0.1:3316)/mpuaps"
+        tables         = "casbin_rule"
+        tablesEx       = ""
+        removePrefix   = ""
+        path           = "./app/common"
+        importPrefix   = "gowebserver/app/common"
+        modelFile      = "model.go"
+        modelFileForDao= "model_dao.go"
+        descriptionTag = true
+        noModelComment = true
+        jsonCase       = "CamelLower"
+        overwriteDao   = true
+    ##system module
+    [[gfcli.gen.dao]]
+        link           = "mysql:root:msp123@tcp(127.0.0.1:3316)/mpuaps"
+        tables         = "sys_user,sys_role,sys_user_online,sys_login_history,sys_oper_log,sys_menu,sys_param,sys_black_list,sys_job,sys_job_log"
+        tablesEx       = ""
+        removePrefix   = ""
+        path           = "./app/system"
+        importPrefix   = "gowebserver/app/system"
+        modelFile      = "model.go"
+        modelFileForDao= "model_dao.go"
+        descriptionTag = true
+        noModelComment = true
+        jsonCase       = "CamelLower"
+        overwriteDao   = true

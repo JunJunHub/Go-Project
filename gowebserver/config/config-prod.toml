@@ -1,0 +1,146 @@
+# 调试开关
+[debug]
+    enable = true
+
+# Database
+[database]
+    type  = "mysql"                     #数据库类型: mysql/pgsql/mssql/sqlite/oracle
+    host  = "127.0.0.1"                 #地址
+    port  = "3316"                      #端口
+    user  = "root"                      #账户
+    pass  = "msp123"                    #密码
+    name  = "mpuaps"                    #数据库名称
+    debug = true                        #是否开启调试模式
+    # 数据库初始化脚本,多个文件;分隔
+    sql   = "./config/sql/mysql/mpuaps_system.sql;./config/sql/mysql/mpuaps_mpusrv.sql;./config/sql/mysql/mpuaps_sys_menu.sql"
+    # Database logger
+    [database.logger]
+        Path   = "log/mpuaps/sql"
+        File   = "mpuaps_sql_{Ymd}.log"
+        Level  = "info"
+        Stdout = false
+
+
+# HTTP Server
+[server]
+	Address       = ":9180"                               # 本地监听地址
+	HttpsAddr     = ":9181"                               # TLS/HTTPS配置，同时需要配置证书和密钥。默认关闭
+	HttpsCertPath = "/msp/nginx/conf/ssl/server.crt"      # TLS/HTTPS证书文件本地路径，建议使用绝对路径。默认关闭
+	HttpsKeyPath  = "/msp/nginx/conf/ssl/server.key"      # TLS/HTTPS密钥文件本地路径，建议使用绝对路径。默认关闭
+	DumpRouterMap = false                                 # 是否打印路由表
+	ServerAgent   = ""                                    # Http服务Agent信息"MPU Application platform services"; 设置为空表示隐藏Http服务信息
+	Prefix        = "/mpuaps/v1"                          # 路由URI前缀
+
+    #静态服务配置
+    IndexFiles        = ["index.html","index.htm"]        # 自动首页静态文件检索。默认为["index.html", "index.htm"]
+    IndexFolder       = false                             # 当访问静态文件目录时，是否展示目录下的文件列表。默认关闭，那么请求将返回403
+    ServerRoot        = "./public/web"                    # 静态文件服务的目录根路径，配置时自动开启静态文件服务。默认关闭
+    SearchPaths       = ""                                # 提供静态文件服务时额外的文件搜索路径，当根路径找不到时则按照顺序在搜索目录查找。默认关闭
+    FileServerEnabled = true                              # 静态文件服务总开关。默认false
+
+    #server logger
+    LogPath       = "log/mpuaps/server"
+    LogLevel      = "error"
+    LogStdout     = false
+
+
+# 文件上传配置
+[upload]
+    type = "local"                                                         #上传类型: local(本地) tencentCOS(腾讯云) 七牛云,阿里云等开发中...
+    fileSizeMax     = "50M"                                                #支持上传文件最大大小
+    fileTypeSupport = "doc,docx,xls,xlsx,md,MD,zip,rar,7z"                 #支持上传的文件格式(后缀区分)
+    imgSizeMax      = "10M"                                                #支持上传图片最大大小
+    imgTypeSupport  = "jpg,jpeg,gif,png,npm"                               #支持上传图片格式(后缀区分)
+    #本地上传配置
+    [upload.local]
+        #本地上传文件路径(相对于服务进程根目录的路径)
+        UpPath = "/public/upload/"
+     #腾讯云cos配置
+    [upload.tencentCOS]
+        #云路径(相对于云空间根目录的路径)
+        UpPath =    "/mpuaps/"
+        RawUrl =    "https://您的cos空间域名.cos.xxx.cloud.com"
+        SecretID =  "填写您的SecretID"
+        SecretKey = "填写您的SecretKey"
+
+
+# 文件下载配置
+[download]
+    downPath = "/public/download" #文件下载路径(相对于服务进程根目录的路径)
+
+
+# gtoken
+[gtoken]
+    CacheMode   = 1                            # 缓存方式: 1=gcache 2=gredis
+    Timeout     = 7200000                      # 超时时间(单位ms, 0默认10天)
+    MaxRefresh  = 0                            # 缓存刷新时间(单位ms, 0默认为超时时间的一半)
+    EncryptKey  = "mpuaps0123456789"           # Token加密key(16/32个字符)
+    AuthFailMsg = "登录超时，请重新登录"           # 认证失败提示信息
+    MultiLogin  = false                        # 是否支持多端登录(默认false)
+
+
+# 默认账户信息
+[defaultUser]
+    UserLoginName = "SysAdmin"      #长度[5,30]位,配置无效时默认账户 SysAdmin
+    UserPasswd    = "kedacom123!"   #长度[8,16]位,配置无效时默认密码 kedacom123!
+    UserNiceName  = "系统管理员"
+    UserEmail     = "https://www.kedacom.com/cn"
+    UserPhone     = "4008282866"
+
+
+# gf Logger
+[logger]
+    Prefix      = "mpuaps"
+    Path        = "log/mpuaps"
+    File        = "mpuaps_{Ymd}.log"
+    Level       = "info"
+    Stdout      = false
+    RotateSize    = "10M"
+    RotateExpire  = "1d"
+    RotateBackupLimit    = 10
+    RotateBackupExpire   = "7d"
+    RotateBackupCompress = 9
+    WriterColorEnable    = true
+
+
+# casbin
+[casbin]
+    model   = "config/casbin_auth.conf"
+
+
+# logstash - 暂未使用
+[logstash]
+    Enable  = "true"
+    Ip      = "127.0.0.1"
+    Port    = "8888"
+    AppName = "mpuaps"
+    Type    = "application"
+    TimeOut = 5
+
+
+# apollo - 暂未使用
+[apollo]
+    Enable = false
+    AppId = ""
+    Cluster = "default"
+    NamespaceName = "application"
+    Ip = ""
+    NextTryConnTime = 0
+
+
+# 默认连接管理的显控平台grpc服务信息
+[rpc]
+    IP  = "127.0.0.1"     #显控grpc服务地址,默认127.0.0.1
+    Port = 28714          #显控grpc服务端口号
+[mpu]
+    WsServerPort = 28712  #显控ws服务端口号
+
+# 级联模式配置
+[cascadeModeCfg]
+    Mode = 1                 # 模式1: 上下级代理对接的显控平台连接相同的统一设备; 模式2: 上下级代理对接的显控平台连接不同的统一设备;
+    ShowNetChannel = true    # 配置客户端非系统管理员是否展示本级的网络点位信息,true默认展示,false隐藏
+
+# 轮循通道个数上限
+[tvWallBatchLoop]
+    MaxLoopChnCfg = 10      # 配置条数
+    MaxLoopChnNum = 20000   # 轮循通到个数

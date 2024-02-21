@@ -1,0 +1,22 @@
+{
+    "ErrSysRoleInvalidRoleId": "invalid role",
+    "ErrSysRoleNameDuplicate": "role name duplicate",
+    "ErrSysRoleNotSupportedCustomPermissions": "not support customize role name",
+    "ErrSysRoleDelDefaultRoleForbid": "delete built-in roles forbidden",
+    "ErrSysRoleDelInUseRoleForbid": "please delete the associated account first when the role is effective.",
+    "ErrSysRoleModifyDefaultRoleForbid": "modify built-in roles forbidden",
+    "ErrSysRoleBindMenuDuplicate": "modify built-in roles forbidden",
+    "ErrSysRoleBindMenuInvalid": "role bind menu invalid",
+    "ErrSysRoleBindChnGroupDuplicate": "role-bound channel grouping resources duplicate",
+    "ErrSysRoleBindChnGroupInvalid": "role-bound channel grouping resources invalid",
+    "ErrSysRoleBindTvWallDuplicate": "role-bound large-screen resource duplicate",
+    "ErrSysRoleBindTvWallInvalid": "role-bound large-screen resource invalid",
+    "ErrSysRoleBindMatrixSchemeDuplicate": "role-bound matrix preplan resource duplicate",
+    "ErrSysRoleBindMatrixSchemeInvalid": "role-bound matrix preplan resource invalid",
+    "ErrSysRoleBindMatrixSchemeGroupDuplicate": "role bound matrix preplan group resource duplicate",
+    "ErrSysRoleBindMatrixSchemeGroupInvalid": "role bound matrix preplan group resource invalid",
+    "ErrSysRoleBindMeetDispatchDuplicate": "角色绑定会议调度资源重复",
+    "ErrSysRoleBindMeetDispatchInvalid": "角色绑定会议调度资源无效",
+    "ErrSysRoleBindMeetDispatchGroupDuplicate": "角色绑定会议调度分组资源重复",
+    "ErrSysRoleBindMeetDispatchGroupInvalid": "角色绑定会议调度分组资源无效"
+}

@@ -1,0 +1,23 @@
+{
+    "EDevTypeUnknow": "设备不存在",
+    "EDevTypeAudioServer": "音频处理器",
+    "EDevTypeAudioDSP": "音频DSP",
+    "EDevTypeInputBoard": "输入板",
+    "EDevTypeOutputBoard": "输出板",
+    "EDevTypeCutBoard": "画面分割板",
+    "EDevTypeMatrixSwitchBoard": "交换板(机箱管理单元)",
+    "EDevTypeAVSignalTransmitter": "发送器",
+    "EDevTypeAVSignalReceiver": "接收器",
+    "EDevTypeDecodeBoard": "解码板",
+    "EDevTypeLedTB": "Led发送板",
+    "EDevTypeEncoder": "编码器",
+    "EDevTypeDecoder": "解码器",
+    "EDevTypeStackedMSP": "堆叠MSP",
+    "EDevTypeCascadeMSP": "级联MSP",
+    "EDevTypeVideoSwap": "视频处理器",
+    "EDevTypeNMS": "网管处理器",
+    "EDevTypeOther": "其它",
+    "EDevTypeMpuBoard": "主控板",
+    "EDevTypeDante": "Dante板",
+    "EDevTypePcServer": "集群服务器"
+}
