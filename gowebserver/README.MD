@@ -80,9 +80,9 @@ CLI Built Detail:
 - `./config/config.toml` 配置编译选项 `gf build` 编译(默认编译win_amd64、linux_amd64、linux_arm64版本)
 - 打包Docker镜像 `gf docker -t kedacom/mpuaps:v1.0` 或 `docker build -t kedacom/mpuaps:v1.0 .`
 
-多平台协作CRLF、LF换行符问题，win平台配置
-- git config --global core.autocrlf input  #commit 时去掉CRLF, checkout时什么都不做
-- git config --global core.safecrlf warn   #发现CRLF时警告并继续
+- 多平台协作CRLF、LF换行符问题，win平台配置
+  - git config --global core.autocrlf input  #commit 时去掉CRLF, checkout时什么都不做
+  - git config --global core.safecrlf warn   #发现CRLF时警告并继续
 
 ---
 # 接口文档
