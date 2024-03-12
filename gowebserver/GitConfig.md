@@ -81,6 +81,18 @@ git config --list
 ``` 
 
 ## 行结束符`CRLF`转换配置
-```shell
 
+```shell
+catch signal SIGSEGV 捕获异常信号，允许检查状态
+
+source /msp/mpuaps/gdb_stack_watcher.py
+
+watch_stack 44 1048576  1024000
+watch_stack 11 1048576  2097152
+
+gdb -ex 'catch signal SIGSEGV' -ex 'source /msp/mpuaps/gdb_stack_watcher.py' mpuserver
+
+watch_stack 11:1048576 44:1000000
+
+dd if=/dev/zero of=largfile_10G bs=10G iflag=fullblock count=1
 ```
